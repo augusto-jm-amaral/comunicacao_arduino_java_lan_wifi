@@ -17,6 +17,7 @@ public abstract class ArduinoListener implements Runnable {
 	public void run() {
 
 		try {
+			@SuppressWarnings("resource")
 			Scanner scanner = new Scanner(arduino.getArduinoSocket()
 					.getInputStream());
 
@@ -28,6 +29,7 @@ public abstract class ArduinoListener implements Runnable {
 			}
 
 		} catch (IOException e) {
+
 			e.printStackTrace();
 		}
 
